@@ -18,9 +18,9 @@
       <tr>
         <td><%= b.title %></td>
         <td><%= b.body %></td>
-        <td><%= link_to 'Show', "/books/:id" %></td>
-        <td><%= link_to 'Edit', "/books/:id/edit" %></td>
-        <td><%= link_to 'Destroy', "/books/:id" %></td>
+        <td><%= link_to 'Show', book_path(b) %></td>
+        <td><%= link_to 'Edit', edit_book_path(b) %></td>
+        <td><%= link_to 'Destroy', book_path(b) %></td>
       </tr>
     </tbody>
     <% end %>
