@@ -20,7 +20,7 @@
         <td><%= b.body %></td>
         <td><%= link_to 'Show', book_path(b) %></td>
         <td><%= link_to 'Edit', edit_book_path(b) %></td>
-        <td><%= link_to 'Destroy', book_path(b) %></td>
+        <td><%= link_to 'Destroy', book_path(b), method: :delete, "data-confirm" => "are you sure?" %></td>
       </tr>
     </tbody>
     <% end %>
