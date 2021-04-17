@@ -13,75 +13,31 @@
       </tr>
     </thead>
 
+　　<% @books.each do |b| %>
     <tbody>
       <tr>
-        <td>アルゴリズム図鑑</td>
-        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
-      </tr>
-
-      <tr>
-        <td>達人プログラマー</td>
-        <td>プログラマ入門者は必読！</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
-      </tr>
-
-      <tr>
-        <td>データベース実践入門</td>
-        <td>効率的なSQL文を教えてくれます</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
-      </tr>
-
-     <tr>
-        <td>テスト3</td>
-        <td>tesuto3</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
-      </tr>
-
-      <tr>
-        <td>2</td>
-        <td>ed</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
-      </tr>
-
-      <tr>
-        <td>redairect</td>
-        <td>redairect</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
-      </tr>
-
-      <tr>
-        <td>あ</td>
-        <td>あ</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
+        <td><%= b.title %></td>
+        <td><%= b.body %></td>
+        <td><%= link_to 'Show', "/books/:id" %></td>
+        <td><%= link_to 'Edit', "/books/:id/edit" %></td>
+        <td><%= link_to 'Destroy', "/books/:id" %></td>
       </tr>
     </tbody>
+    <% end %>
   </table>
 
   <h2>New book</h2>
 
   <%= form_with model:@book, local:true do |f| %>
-  
+
 　<div class="field">Title</div>
   <%= f.text_field :title %>
-    
+
   <div class="field">Body</div>
   <%= f.text_area :body %>
-    
+
   <div class="actions"><%= f.submit 'Create Book' %></div>
-    
+
+  <% end %>
+
 </body>
